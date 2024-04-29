@@ -1,0 +1,41 @@
+#Mini adventure game where you chose what happens
+lifes = 3
+print("You were recently chosen to rule a small town. The problem is you live quite far from this town and must make your way over there now.")
+
+fork = input("you find a fork in the road. 1 to go left. 2 to go right. ")
+if fork != "1":
+    car = input("You find a broken car. 1 to hotwire it. 2 to continue on foot. ")
+    if car != "2":
+        print("the car exploded! -1 life")
+        lifes = (lifes-1)
+    elif car != "1":
+        print("you continue on your journey.")
+elif fork != "2":
+    river = input("you found a river. The river has an old bridge you can cross or you can be more adventurous and swing from a nearby tree. 1 to cross the bridge. 2 to swing from the vine. ")
+    if river == "2":
+        print("You crossed the bridge and continue on your journey.")
+    elif river == "1":
+        print("The vine broke and you fell in the river! -1 life")
+        lifes = (lifes-1)
+    else: ("You can only pick option 1 or 2.")
+print("you made it! Although you are kind of hungry... Up ahead you spot an apple tree.")
+appletree = input("you made it to the tree! These apples look a bit weird. are you sure you want to eat them? 1 for yes. 2 for no.")
+if appletree == "1":
+    print("These apples are rotten! -1 life")
+    lifes = (lifes-1)
+elif appletree == "2":
+    print("You don't trust these apples and decided to miss them. However you're still hungry. You can hear a buzzing on the otherside of the tree. When you investigate you find a bee hive")
+    print("You decide to try for some of their honey.")
+    honey = input("1 to wait patiently. 2 to shake the tree. ")
+    if honey == "2":
+        print("you shake the tree. AH BEES! -1 life")
+        lifes = (lifes - 1)
+    elif honey == "1":
+        print("You wait... and wait... and wait.. until finally some honey drips from the hive.")
+    else: 
+        print("you can only pick option 1 or 2")
+print("you made it! however. This castle needs a healthy ruler. You have " + lifes +"." )
+if lifes <= 2:
+    print("this isn't enough lives. try the game again and maybe be less reckless.")
+else:
+    print("you have enough lives. have fun running your new town.")
